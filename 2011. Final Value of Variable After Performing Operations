@@ -1,0 +1,13 @@
+class Solution:
+    def finalValueAfterOperations(self, operations: List[str]) -> int:
+        f=0
+        for i in range (100):
+            if len(operations) >= i+1 and (operations[i] == "++X" or operations[i] == "X++"):
+                f += 1
+            elif len(operations) >= i+1 and (operations[i] == "--X" or operations[i] == "X--"):
+                f -= 1
+            else:
+                break
+        return f
+
+        
