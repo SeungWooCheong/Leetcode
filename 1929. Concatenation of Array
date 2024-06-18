@@ -1,0 +1,12 @@
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        ans = []
+        for i in range(2*len(nums)):
+            if len(nums) >= i+1:
+                ans.append(nums[i])
+            elif len(nums) >= (i+1)/2:
+                ans.append(nums[i-len(nums)]) 
+            else:
+                break
+        return ans
+        
