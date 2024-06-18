@@ -1,0 +1,10 @@
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while True:
+            if num >= 10:
+                snum = str(num)
+                num = 0
+                for i in range(len(snum)):
+                    num += int(snum[i])
+            if num < 10:
+                return num
