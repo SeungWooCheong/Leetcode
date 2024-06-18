@@ -1,0 +1,13 @@
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        pod = 1
+        sod = 0
+        for i in range (5):
+            if n >= 10**i:
+                m = n // 10**i
+                pod *= m % 10
+                sod += m % 10
+            else:
+                break
+        sps = pod - sod
+        return sps
