@@ -1,0 +1,13 @@
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+        sos=0
+        for i in range(1, 100):
+            if len(s) >= i+1:
+                a = ord(s[i-1])
+                b = ord(s[i])
+                sos += abs(a-b)
+            else:
+                break
+        return sos
+
+            
