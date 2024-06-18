@@ -1,0 +1,6 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        num = x ** (1/2)
+        sqrt = floor(num)
+        return sqrt
+        
