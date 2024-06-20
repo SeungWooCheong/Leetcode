@@ -1,0 +1,17 @@
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+        rs = 0
+        ls = 0
+        bal = 0
+        for i in range(len(s)):
+            if s[i] == "R" and rs == ls-1:
+                bal += 1
+                rs += 1
+            elif s[i] == "R":
+                rs += 1
+            elif ls == rs-1:
+                bal += 1
+                ls += 1
+            else:
+                ls += 1
+        return bal
