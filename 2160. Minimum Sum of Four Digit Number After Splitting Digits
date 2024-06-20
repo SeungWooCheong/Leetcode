@@ -1,0 +1,9 @@
+class Solution:
+    def minimumSum(self, num: int) -> int:
+        num = str(num)
+        numl = []
+        for i in range(len(num)):
+            numl.append(int(num[i]))
+        numl = sorted(numl)
+        return 10*(numl[0]+numl[1])+numl[2]+numl[3]
+
