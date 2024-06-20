@@ -1,0 +1,22 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        strx = str(x)
+        if x < 0:
+            return False
+        elif 0 <= x <= 9:
+            return True
+        elif len(strx)%2 == 0:
+            for i in range(len(strx)//2):
+                if strx[i] == strx[-i-1]:
+                    pass
+                else:
+                    return False
+        else:
+            for j in range((len(strx)-1)//2):
+                if strx[j] == strx[-j-1]:
+                    pass
+                else:
+                    return False
+        return True
+        
+        
