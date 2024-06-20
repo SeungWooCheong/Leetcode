@@ -1,0 +1,23 @@
+class Solution:
+    def maximumOddBinaryNumber(self, s: str) -> str:
+        num = 0
+        maxodd = ""
+        for i in range(len(s)):
+            if s[i] == "1":
+                num += 1
+            else:
+                pass
+        if num == 1:
+            for j in range(len(s)-1):
+                maxodd += "0"
+            maxodd += "1"
+            return maxodd
+        else:
+            for k in range(num-1):
+                maxodd += "1"
+            for m in range(len(s)-num):
+                maxodd += "0"
+            maxodd += "1"
+            return maxodd
+            
+        
