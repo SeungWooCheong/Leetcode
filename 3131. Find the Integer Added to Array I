@@ -1,0 +1,8 @@
+class Solution:
+    def addedInteger(self, nums1: List[int], nums2: List[int]) -> int:
+        sumnum1 = 0
+        sumnum2 = 0
+        for i in range(len(nums1)):
+            sumnum1 += nums1[i]
+            sumnum2 += nums2[i]
+        return int((sumnum2 - sumnum1)/len(nums1))
