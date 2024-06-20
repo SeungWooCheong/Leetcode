@@ -1,0 +1,23 @@
+class Solution:
+    def twoOutOfThree(self, nums1: List[int], nums2: List[int], nums3: List[int]) -> List[int]:
+        dic = {}
+        tot = []
+        for n1 in nums1:
+            dic[n1] = [1]
+        for n2 in nums2: 
+            if n2 not in dic:
+                dic[n2] = [2]
+            else:
+                dic[n2] += [2]
+        for n3 in nums3: 
+            if n3 not in dic:
+                dic[n3] = [3]
+            else:
+                dic[n3] += [3]
+        for d in dic:
+            if (1 in dic[d] and 2 in dic[d]) or (2 in dic[d] and 3 in dic[d]) or (3 in dic[d] and 1 in dic[d]):
+                tot.append(d)
+            else:
+                pass
+        return tot
+                    
