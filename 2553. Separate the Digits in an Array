@@ -1,0 +1,11 @@
+class Solution:
+    def separateDigits(self, nums: List[int]) -> List[int]:
+        slist = ""
+        separ = []
+        for i in range(len(nums)):
+            slist += str(nums[i])
+        for j in range(len(slist)):
+            separ.append(int(slist[j]))
+        return separ
+
+        
