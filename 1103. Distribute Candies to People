@@ -1,0 +1,15 @@
+class Solution:
+    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
+        dist = []
+        can = 1
+        for i in range(num_people):
+            dist.append(0)
+        while True:
+            if candies <= can:
+                dist[can%num_people-1] += candies
+                return dist
+            else:
+                dist[can%num_people-1] += can
+                candies -= can
+                can += 1
+        
