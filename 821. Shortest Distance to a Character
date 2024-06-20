@@ -1,0 +1,16 @@
+class Solution:
+    def shortestToChar(self, s: str, c: str) -> List[int]:
+        index = []
+        distance = []
+        mindis = []
+        for i in range(len(s)):
+            if s[i] == c:
+                index.append(i)
+            else:
+                pass
+        for j in range(len(s)):
+            for k in range(len(index)):
+                distance.append(abs(j-index[k]))
+            mindis.append(min(distance))
+            distance = []
+        return mindis
