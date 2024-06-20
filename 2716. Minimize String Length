@@ -1,0 +1,9 @@
+class Solution:
+    def minimizedStringLength(self, s: str) -> int:
+        dic = {}
+        for st in s:
+            if st in dic:
+                pass
+            else:
+                dic[st] = 0
+        return len(dic)
