@@ -1,0 +1,16 @@
+class Solution:
+    def dayOfYear(self, date: str) -> int:
+        days1 = [31,28,31,30,31,30,31,31,30,31,30,31]
+        days2 = [31,29,31,30,31,30,31,31,30,31,30,31]
+        days = 0
+        if int(date[0:4])%4 == 0 and int(date[0:4]) != 1900:
+            for i in range(int(date[5:7])-1):
+                days += days2[i]
+            days += int(date[8:])
+            return days
+        else:
+            for i in range(int(date[5:7])-1):
+                days += days1[i]
+            days += int(date[8:])
+            return days
+        
