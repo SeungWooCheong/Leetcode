@@ -1,0 +1,16 @@
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        word = 0
+        trunc = ""
+        for i in range(len(s)):
+            if word == k:
+                return trunc
+            elif i == len(s)-1:
+                trunc += s[i]
+            elif s[i] != " " and s[i+1] == " ":
+                word += 1
+                trunc += s[i]
+            else:
+                trunc += s[i]
+        return trunc
+        
