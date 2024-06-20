@@ -1,0 +1,18 @@
+class Solution:
+    def decodeMessage(self, key: str, message: str) -> str:
+        dic = {}
+        dec = ""
+        for k in key:
+            if k == " ":
+                pass
+            else:
+                if k in dic:
+                    pass
+                else:
+                    dic[k] = chr(len(dic)+97)
+        for m in message:
+            if m == " ":
+                dec += " "
+            else:
+                dec += str(dic[m])
+        return dec
