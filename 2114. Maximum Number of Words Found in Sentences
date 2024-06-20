@@ -1,0 +1,16 @@
+class Solution:
+    def mostWordsFound(self, sentences: List[str]) -> int:
+        word = 1
+        words = []
+        for i in range(len(sentences)):
+            for j in range(len(sentences[i])):
+                if j == len(sentences[i])-1:
+                    pass
+                elif sentences[i][j] != " " and sentences[i][j+1] == " ":
+                    word += 1
+                else:
+                    pass
+            words.append(word)
+            word = 1
+        return max(words)
+        
