@@ -1,0 +1,12 @@
+class Solution:
+    def countPoints(self, rings: str) -> int:
+        count = 0
+        dic = {'R' : [],'G' : [], 'B' : []}
+        for i in range(0, len(rings), 2):
+            dic[rings[i]].append(rings[i+1])
+        for j in range(10):
+            if str(j) in dic['R'] and str(j) in dic['G'] and str(j) in dic['B']:
+                count += 1
+            else:
+                pass
+        return count
