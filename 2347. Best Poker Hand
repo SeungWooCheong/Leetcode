@@ -1,0 +1,30 @@
+class Solution:
+    def bestHand(self, ranks: List[int], suits: List[str]) -> str:
+        dic = {}
+        for s in suits:
+            if s not in dic:
+                dic[s] = 1
+            else:
+                dic[s] += 1
+        for d1 in dic:
+            if dic[d1] == 5:
+                return "Flush"
+            else:
+                break
+        dic2 = {}
+        for r in ranks:
+            if r not in dic2:
+                dic2[r] = 1
+            else:
+                dic2[r] += 1
+        for d in dic2:
+            if dic2[d] >= 3:
+                return "Three of a Kind"
+            else:
+                pass
+        for d in dic2:
+            if dic2[d] >= 2:
+                return "Pair"
+            else:
+                pass
+        return "High Card"
