@@ -1,0 +1,10 @@
+class Solution:
+    def distributeCandies(self, candyType: List[int]) -> int:
+        dic = {}
+        ty = 0
+        for c in candyType:
+            if c not in dic:
+                dic[c] = 1
+            else:
+                pass
+        return min(len(candyType)//2, len(dic))
