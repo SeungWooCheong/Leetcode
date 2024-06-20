@@ -1,0 +1,16 @@
+class Solution:
+    def maxPower(self, s: str) -> int:
+        l = 1
+        p = [1]
+        for i in range(len(s)):
+            if i == 0:
+                pass
+            elif i == len(s)-1 and s[i] == s[i-1]:
+                l += 1
+                p.append(l)
+            elif s[i-1] == s[i]:
+                l += 1
+            else:
+                p.append(l)
+                l = 1
+        return max(p)
