@@ -1,0 +1,9 @@
+class Solution:
+    def finalString(self, s: str) -> str:
+        ss = ""
+        for i in range(len(s)):
+            if s[i] == "i":
+                ss = ss[::-1]
+            else:    
+                ss += s[i]
+        return ss 
