@@ -1,0 +1,13 @@
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        uni = []
+        for n in nums:
+            if n in uni:
+                pass
+            else:
+                uni.append(n)
+        uni = sorted(uni)
+        if len(uni) < 3:
+            return uni[-1]
+        else:
+            return uni[-3]
