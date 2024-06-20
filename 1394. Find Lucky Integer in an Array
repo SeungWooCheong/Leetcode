@@ -1,0 +1,18 @@
+class Solution:
+    def findLucky(self, arr: List[int]) -> int:
+        lucky = []
+        dic = {}
+        for a in arr:
+            if a not in dic:
+                dic[a] = 1
+            else:
+                dic[a] += 1
+        for d in dic:
+            if dic[d] == d:
+                lucky.append(d)
+            else:
+                pass
+        if len(lucky) == 0:
+            return -1
+        else:
+            return max(lucky)
