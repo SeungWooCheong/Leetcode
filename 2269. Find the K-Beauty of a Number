@@ -1,0 +1,20 @@
+class Solution:
+    def divisorSubstrings(self, num: int, k: int) -> int:
+        divisor = []
+        div = ""
+        count = 0
+        snum = str(num)
+        for i in range(len(snum)-k+1):
+            for j in range(k):
+                div += snum[i+j]
+            divisor.append(int(div))
+            div = ""
+        for k in range(len(divisor)):
+            if divisor[k] == 0:
+                pass
+            elif num%divisor[k] == 0:
+                count += 1
+            else:
+                pass
+        return count
+            
