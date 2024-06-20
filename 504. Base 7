@@ -1,0 +1,23 @@
+class Solution:
+    def convertToBase7(self, num: int) -> str:
+        i=0
+        base = 0
+        while True:
+            if 7 ** i <= num < 7 ** (i+1):
+                base += 10 ** i
+                num -= 7 ** i
+            elif num >= 7 ** (i+1):
+                i += 1
+            elif 0 < num <= 7 ** i:
+                i -= 1
+            elif num == 0:
+                return str(base)
+            elif -(7 ** (i+1)) < num <= -(7 ** (i)):
+                base -= 10 ** i
+                num += 7 ** i
+            elif num <= -(7 ** (i+1)):
+                i += 1
+            elif -(7 ** (i)) <= num < 0:
+                i -= 1
+            
+                
