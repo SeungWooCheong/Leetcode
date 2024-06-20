@@ -1,0 +1,9 @@
+class Solution:
+    def arrayPairSum(self, nums: List[int]) -> int:
+        nums = sorted(nums)
+        maxsum = 0
+        for i in range(len(nums)//2):
+            maxsum += nums[2*i]
+        return maxsum
+
+        
