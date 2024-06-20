@@ -1,0 +1,18 @@
+class Solution:
+    def dayOfTheWeek(self, day: int, month: int, year: int) -> str:
+        cday = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"]
+        days1 = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        days2 = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        date = 0
+        for i in range(1970, year):
+            if i%4 == 0:
+                date += 366
+            else:
+                date += 365
+        for j in range(month):
+            if year%4 != 0 or year == 2100:
+                date += days1[j]
+            else:
+                date += days2[j]
+        date += day
+        return cday[date%7]
