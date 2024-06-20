@@ -1,0 +1,10 @@
+class Solution:
+    def findFinalValue(self, nums: List[int], original: int) -> int:
+        dic = {}
+        for n in nums:
+            dic[n] = 1
+        while True:
+            if original in dic:
+                original *= 2
+            else:
+                return original
