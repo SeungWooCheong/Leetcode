@@ -1,0 +1,15 @@
+class Solution:
+    def constructRectangle(self, area: int) -> List[int]:
+        rec = []
+        for i in range(int(floor((area)**(1/2))), area+1):
+            if area % i == 0 and i >= area/i:
+                rec.append(i)
+                rec.append(int(area/i))
+                return rec
+            elif area % i == 0 and i < area/i:
+                rec.append(int(area/i))
+                rec.append(i)
+                return rec
+            else:
+                pass        
+        
