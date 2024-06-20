@@ -1,0 +1,8 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            if nums[i] == max(nums):
+                maximum = nums[i]
+                nums.remove(nums[i])
+                break
+        return (maximum-1)*(max(nums)-1)
