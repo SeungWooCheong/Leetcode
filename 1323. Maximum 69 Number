@@ -1,0 +1,13 @@
+class Solution:
+    def maximum69Number (self, num: int) -> int:
+        change = 0
+        snum = str(num)
+        for i in range(len(snum)):
+            if snum[i] == "6":
+                num += 3*10**(len(snum)-i-1)
+                return num
+            else:
+                pass
+        return num
+            
+        
