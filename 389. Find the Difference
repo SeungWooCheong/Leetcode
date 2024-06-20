@@ -1,0 +1,9 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        sums = 0
+        sumt = 0
+        for i in range(len(s)):
+            sums += ord(s[i])
+        for j in range(len(t)):
+            sumt += ord(t[j])
+        return chr(sumt-sums)    
