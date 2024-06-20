@@ -1,0 +1,10 @@
+class Solution:
+    def numberGame(self, nums: List[int]) -> List[int]:
+        nums = sorted(nums)
+        sortnum = []
+        for i in range(len(nums)//2):
+            sortnum.append(nums[2*i+1])
+            sortnum.append(nums[2*i])
+        return sortnum
+
+        
