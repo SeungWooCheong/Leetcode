@@ -1,0 +1,11 @@
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        dic = {}
+        sor = []
+        for i in range(len(names)):
+            dic[heights[i]] = names[i]
+        heights = reversed(sorted(heights))
+        for height in heights:
+            sor.append(dic[height])
+        return sor
+        
