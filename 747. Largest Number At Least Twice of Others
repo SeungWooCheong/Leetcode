@@ -1,0 +1,14 @@
+class Solution:
+    def dominantIndex(self, nums: List[int]) -> int:
+        snums = sorted(nums)
+        for i in range(len(nums)):
+            if nums[i] == max(nums):
+                index = i
+                break
+            else:
+                pass
+        if max(nums) >= 2*snums[len(nums)-2]:
+            return index
+        else:
+            return -1
+        
