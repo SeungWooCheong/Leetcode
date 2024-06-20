@@ -1,0 +1,11 @@
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        shuffle = []
+        shuf = ""
+        for i in range(len(indices)):
+            shuffle.append(0)
+        for j in range(len(s)):
+            shuffle[indices[j]] = s[j]
+        for k in range(len(shuffle)):
+            shuf += shuffle[k]
+        return shuf
