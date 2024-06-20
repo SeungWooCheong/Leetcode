@@ -1,0 +1,10 @@
+class Solution:
+    def clearDigits(self, s: str) -> str:
+        digit = "1234567890"
+        cd = ""
+        for st in s:
+            if st not in digit:
+                cd += st
+            else:
+                cd = cd[0:len(cd)-1]
+        return cd
