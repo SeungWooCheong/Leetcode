@@ -1,0 +1,12 @@
+class Solution:
+    def checkRecord(self, s: str) -> bool:
+        A = 0
+        for st in s:
+            if st == "A":
+                A += 1
+            else:
+                pass
+        if A < 2 and "LLL" not in s:
+            return True
+        return False
+            
