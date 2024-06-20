@@ -1,0 +1,5 @@
+class Solution:
+    def fib(self, n: int) -> int:
+        fib = (1/5**(1/2))*((((1+5**(1/2))/2)**n)-(((1-5**(1/2))/2)**n))
+        return int(fib)
+        
