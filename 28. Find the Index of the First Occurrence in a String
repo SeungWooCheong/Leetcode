@@ -1,0 +1,17 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        hn = []
+        word = ""
+        for i in range(len(haystack) - len(needle)+1):
+            for j in range(i, i+len(needle)):
+                word += haystack[j]
+            hn.append(word)
+            word = ""
+        for k in range(len(hn)):
+            if hn[k] == needle:
+                return k
+            else:
+                pass
+        return -1 
+        
+                
