@@ -1,0 +1,11 @@
+class Solution:
+    def isPathCrossing(self, path: str) -> bool:
+        dic = {'N' : 0, 'S' : 0, 'W' : 0, 'E' : 0}
+        visit = [[0,0]]
+        for p in path:
+            dic[p] += 1
+            if [dic['N']-dic['S'],dic['E']-dic['W']] in visit:
+                return True
+            else:
+                visit.append([dic['N']-dic['S'],dic['E']-dic['W']])
+        return False
