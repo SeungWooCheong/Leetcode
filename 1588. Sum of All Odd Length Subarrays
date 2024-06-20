@@ -1,0 +1,8 @@
+class Solution:
+    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+        sumodd = 0
+        for i in range(1, len(arr)+1, 2):
+            for j in range(len(arr)-i+1):
+                for k in range(i):
+                    sumodd += arr[j+k]
+        return sumodd
