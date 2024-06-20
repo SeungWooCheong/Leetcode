@@ -1,0 +1,21 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        dic = {}
+        for i in range(len(s)):
+            if s[i] not in dic:
+                dic[s[i]] = t[i]
+            else:
+                if dic[s[i]] == t[i]:
+                    pass
+                else:
+                    return False
+        di = {}
+        for tt in t:
+            if tt not in di:
+                di[tt] = 0
+            else:
+                pass
+        if len(dic) == len(di):
+            return True
+        else:
+            return False
