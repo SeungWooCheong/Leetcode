@@ -1,0 +1,11 @@
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        matsum = 0
+        for i in range(len(mat)):
+            for j in range(len(mat)):
+                if i + j == len(mat)-1 or i == j:
+                    matsum += mat[i][j]
+                else:
+                    pass
+        return matsum
+        
