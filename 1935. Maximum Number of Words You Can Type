@@ -1,0 +1,24 @@
+class Solution:
+    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
+        can = 0
+        word = ""
+        words = []
+        for t in text:
+            if t != " ":
+                word += t
+            else:
+                words.append(word)
+                word = ""
+        words.append(word)
+        for w in words:
+            if len(brokenLetters) == 0:
+                can += 1
+            else:
+                for b in brokenLetters:
+                    if b not in w and b == brokenLetters[-1]:
+                        can += 1
+                    elif b not in w:
+                        pass
+                    else:
+                        break
+        return can    
