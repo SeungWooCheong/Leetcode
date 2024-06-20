@@ -1,0 +1,18 @@
+class Solution:
+    def secondHighest(self, s: str) -> int:
+        nums = []
+        for i in range(len(s)):
+            if 97 <= ord(s[i]) <= 122:
+                pass
+            else:
+                nums.append(int(s[i]))
+        if len(nums) == 0 or min(nums) == max(nums):
+            return -1
+        else:
+            nums = sorted(nums)
+            for j in range(1, len(nums)+1):
+                if nums[-j] == max(nums):
+                    pass
+                else:
+                    return nums[-j]
+        
