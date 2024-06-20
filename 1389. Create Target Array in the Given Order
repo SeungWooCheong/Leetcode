@@ -1,0 +1,6 @@
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        array = []
+        for i in range(len(nums)):
+                array = array[0:index[i]] + [nums[i]] + array[index[i]:len(array)]
+        return array
