@@ -1,0 +1,18 @@
+class Solution:
+    def findGCD(self, nums: List[int]) -> int:
+        large = nums[0]
+        small = nums[0]
+        for i in range(len(nums)):
+            if nums[i] >= large:
+                large = nums[i]
+            elif nums[i] <= small:
+                small = nums[i]
+        k = 1
+        while True:
+            if large%k == 0 and small%k == 0:
+                great = k
+                k += 1
+            elif k < small:
+                k += 1
+            else:
+                return great
