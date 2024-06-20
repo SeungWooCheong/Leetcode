@@ -1,0 +1,14 @@
+class Solution:
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+        dif = [[],[]]
+        for n1 in nums1:
+            if n1 in nums2 or n1 in dif[0]:
+                pass
+            else:
+                dif[0].append(n1)
+        for n2 in nums2:
+            if n2 in nums1 or n2 in dif[1]:
+                pass
+            else:
+                dif[1].append(n2)
+        return dif
