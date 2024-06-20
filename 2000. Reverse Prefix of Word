@@ -1,0 +1,21 @@
+class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        rev = len(word)
+        for i in range(len(word)):
+            if word[i] == ch:
+                rev = i
+                break
+            else:
+                pass
+        reverse = []
+        if rev == len(word):
+            return word
+        else:
+            for j in range(rev+1):
+                reverse.append(word[rev-j])
+            for k in range(rev+1, len(word)):
+                reverse.append(word[k])
+        reverses = ""
+        for m in range(len(reverse)):
+            reverses += reverse[m]
+        return reverses
