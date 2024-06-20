@@ -1,0 +1,8 @@
+class Solution:
+    def getSum(self, a: int, b: int) -> int:
+        A = 2**a
+        B = 2**b
+        AB = math.log2(A*B)
+        return int(AB)
+        
+        
