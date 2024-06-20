@@ -1,0 +1,21 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        n10 = 0
+        n2 = ""
+        for i in range(len(a)):
+            n10 += int(a[i])*2**(len(a)-1-i)
+        for j in range(len(b)):
+            n10 += int(b[j])*2**(len(b)-1-j)
+        while True:
+            if n10 == 0 or n10 == 1:
+                n2 += str(n10)
+                return n2[::-1]
+            elif n10%2 == 0:
+                n2 += "0"
+                n10 = n10//2
+            elif n10%2 == 1:
+                n2 += "1"
+                n10 -= 1
+                n10 = n10//2
+
+        
