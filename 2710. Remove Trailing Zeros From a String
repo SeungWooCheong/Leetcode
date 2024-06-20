@@ -1,0 +1,8 @@
+class Solution:
+    def removeTrailingZeros(self, num: str) -> str:
+        num = int(num)
+        while True:
+            if num%10 == 0:
+                num //= 10
+            else:
+                return str(num)
