@@ -1,0 +1,10 @@
+class Solution:
+    def countDaysTogether(self, arriveAlice: str, leaveAlice: str, arriveBob: str, leaveBob: str) -> int:
+        dic = {'01': 0, '02' : 31, '03' : 59, '04' : 90, '05' : 120, '06' : 151, '07' : 181, '08' : 212, '09' : 243, '10' : 273, '11' : 304, '12' : 334}
+        lA = dic[leaveAlice[0:2]] + int(leaveAlice[3:5])
+        lB = dic[leaveBob[0:2]] + int(leaveBob[3:5])
+        aA = dic[arriveAlice[0:2]] + int(arriveAlice[3:5])
+        aB = dic[arriveBob[0:2]] + int(arriveBob[3:5])
+        return max(0, min(lA-aB+1, lB-aA+1, lA-aA+1, lB-aB+1))
+        
+        
